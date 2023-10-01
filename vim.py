@@ -1,11 +1,13 @@
 import os
 import sys
+import time
 import webbrowser
 
 import keyboard
-
+#run vim.py now.
+#pip install keyboard
 os.system("cls")
-print("Help can read help.\nThis is vim 0.0.2.\nBy ancodeb.\nGithub:https://www.github.com/ancodeb.\nChina gov can type cg\ngithub can go to github")
+print("Help can read help.\nThis is vim 0.0.4.\nBy ancodeb.\nGithub:https://www.github.com/ancodeb.\nChina gov can type cg\ngithub can go to github")
 print("happy china's day!")
 print("""
   _     _   _                   ____                                 _ _   _           _                             __                       _      _     
@@ -19,8 +21,10 @@ print("""
 """)
 while True:
     a=input(":")
+    a=a.strip()
+
     if a=="help":
-        print("cg can find china gov.\nhelp can read help.\nq can quit vim.\nql can exit help.\ncreat is new file.\nqiuhuvim can close files.")
+        print('"cg" can find china gov.\n"help" can read help.\n"q" can quit vim.\n"ql" can exit help.\n"creat" is creat a new file.\n"github" can go to github')
     elif a=="cg":
         print("china gov is china gov.\nit is https://www.gov.cn")
     elif a=="q":
@@ -34,17 +38,31 @@ while True:
         ti=[]
         while hello:
             if keyboard.is_pressed('i'):
-                text=input(":")
+                text=input(':')
                 ti.append(text)
                 os.system("cls")
+                number=1
                 for i in ti:
-                    print(i)
+
+                    print(str(number)+'    '+i)
+                    number=int(number)
+                    number+=1
             if keyboard.is_pressed('q'):
                 break
+            if keyboard.is_pressed('s'):
+                name=input('name:')
+                Suffixname=input('Suffix name:')
+                name=name+Suffixname
+                with open(name,'a+',encoding='utf-8')as file:
+                    for i in ti:
+                        file.write(i+'\n')
+
     elif a=='happy':
         webbrowser.open('https://www.gov.cn/')
     elif a=='github':
         webbrowser.open('https://www.github.com/ancodeb')
+    elif a=='':
+        pass
 
 
 
