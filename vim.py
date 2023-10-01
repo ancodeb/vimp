@@ -1,11 +1,13 @@
 import os
 import sys
+import time
 import webbrowser
 
 import keyboard
-
+#run vim.py now.
+#pip install keyboard
 os.system("cls")
-print("Help can read help.\nThis is vim 0.0.2.\nBy ancodeb.\nGithub:https://www.github.com/ancodeb.\nChina gov can type cg\ngithub can go to github")
+print("Help can read help.\nThis is vim 0.0.3.\nBy ancodeb.\nGithub:https://www.github.com/ancodeb.\nChina gov can type cg\ngithub can go to github")
 print("happy china's day!")
 print("""
   _     _   _                   ____                                 _ _   _           _                             __                       _      _     
@@ -34,13 +36,20 @@ while True:
         ti=[]
         while hello:
             if keyboard.is_pressed('i'):
-                text=input(":")
+                text=input(':')
                 ti.append(text)
                 os.system("cls")
                 for i in ti:
                     print(i)
             if keyboard.is_pressed('q'):
                 break
+            if keyboard.is_pressed('s'):
+                name=input('name:')
+                name=name+'.txt'
+                with open(name,'a+',encoding='utf-8')as file:
+                    for i in ti:
+                        file.write(i)
+
     elif a=='happy':
         webbrowser.open('https://www.gov.cn/')
     elif a=='github':
