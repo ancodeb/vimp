@@ -1,0 +1,7 @@
+"cg" can find china gov.
+"help" can read help.
+"q" can quit vim.
+"ql" can exit help.
+"creat" is creat a new file.
+"github" can go to github
+"see" can see a file
