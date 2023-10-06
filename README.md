@@ -7,4 +7,5 @@ ancodeb is a chinese.
 或者輸入代碼<br />
 "pip install keyboard"
 然後，現在啟動vimen5.py或linux or macos.py.
+`printf()`
 
